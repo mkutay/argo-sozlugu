@@ -2,6 +2,7 @@
 
 import * as React from 'react';
 import Link from 'next/link';
+import { HamburgerMenuIcon } from '@radix-ui/react-icons';
 
 import { cn } from '@/lib/utils';
 import {
@@ -14,7 +15,6 @@ import {
   navigationMenuTriggerStyle,
 } from '@/components/ui/navigation-menu';
 import { ThemeToggle } from '@/components/themeToggle';
-import { HamburgerMenuIcon } from '@radix-ui/react-icons';
 import { Logo } from '@/components/icons';
 
 export function NavBar() {
