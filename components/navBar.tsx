@@ -32,8 +32,8 @@ export function NavBar() {
               <ListItem href="/hakkimizda">
                 Hakkımızda
               </ListItem>
-              <ListItem href="/kelimeler">
-                Kelime Listesi
+              <ListItem href="/ifadeler">
+                İfadeler Listesi
               </ListItem>
             </ul>
           </NavigationMenuContent>
@@ -41,7 +41,7 @@ export function NavBar() {
         <NavigationMenuItem className="hidden sm:flex">
           <Link href="/" legacyBehavior passHref>
             <NavigationMenuLink className={cn(navigationMenuTriggerStyle(), "text-lg")}>
-              <Logo className="mr-2"/>
+              <Logo size={32} className="mr-2"/>
               Argo Sözlüğü
             </NavigationMenuLink>
           </Link>
@@ -54,9 +54,9 @@ export function NavBar() {
           </Link>
         </NavigationMenuItem>
         <NavigationMenuItem className="hidden sm:flex">
-          <Link href="/kelimeler" legacyBehavior passHref>
+          <Link href="/ifadeler" legacyBehavior passHref>
             <NavigationMenuLink className={cn(navigationMenuTriggerStyle(), "text-md")}>
-              Kelime Listesi
+              İfadeler Listesi
             </NavigationMenuLink>
           </Link>
         </NavigationMenuItem>
