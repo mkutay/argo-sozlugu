@@ -11,7 +11,7 @@ export default function Layout({
         Çevrim İçi Türkçe Argo Sözlüğü
       </h1>
       <SearchDictionary/>
-      <div className="w-full md:w-5/12">
+      <div className="w-full md:w-2/3">
         {children}
       </div>
     </main>
