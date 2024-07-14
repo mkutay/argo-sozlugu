@@ -77,3 +77,5 @@ export default function SearchDictionary() {
     </div>
   );
 }
+
+// https://appcode.app/quickly-search-and-filter-a-list-with-javascript/

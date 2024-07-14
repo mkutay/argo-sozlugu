@@ -1,5 +1,6 @@
 import MainTable from '@/components/mainTable';
 import SearchDictionary from '@/components/searchDictionary';
+import { Suspense } from 'react';
 
 export default async function Home({
   searchParams,
@@ -15,7 +16,9 @@ export default async function Home({
       <h1 className="text-center scroll-m-20 text-4xl font-extrabold tracking-tight lg:text-5xl">
         Çevrim İçi Türkçe Argo Sözlüğü
       </h1>
-      <SearchDictionary/>
+      <Suspense>
+        <SearchDictionary/>
+      </Suspense>
       <div className="w-full md:w-2/3">
         <MainTable query={query}/>
       </div>
