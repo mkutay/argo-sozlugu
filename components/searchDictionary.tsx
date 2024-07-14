@@ -2,11 +2,10 @@
 
 import { useDebouncedCallback } from 'use-debounce';
 import { useSearchParams, usePathname, useRouter } from 'next/navigation';
+import { useState } from 'react';
 
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
-import { useState } from 'react';
-import getMatches from '@/lib/getMatches';
 
 export default function SearchDictionary() {
   const searchParams = useSearchParams();
@@ -15,7 +14,7 @@ export default function SearchDictionary() {
 
   const pathname = usePathname();
   const { replace } = useRouter();
-  const router = useRouter()
+  const router = useRouter();
 
   const handleSearch = useDebouncedCallback((term: string) => {
     const params = new URLSearchParams(searchParams);
@@ -47,9 +46,19 @@ export default function SearchDictionary() {
   }, 200);
 
   const searchSubmit = async () => {
-    const entries = await (await fetch(`/api/get-matches?query=${searchQuery}`)).json();
+    const params = new URLSearchParams(searchParams);
 
-    router.push(`/ifadeler/${entries[0].slug}`);
+    if (searchQuery) {
+      params.set('query', searchQuery);
+      params.set('index', '0');
+    } else {
+      params.delete('query');
+      return;
+    }
+
+    const entry = await (await fetch(`/api/get-matches?${params.toString()}`)).json();
+
+    router.push(`/ifadeler/${entry.slug}`);
   };
 
   return (
