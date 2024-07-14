@@ -1,26 +1,11 @@
 import Link from 'next/link';
 
+import getMatches from '@/lib/getMatches';
 import getDictionary from '@/lib/getDictionary';
-import {
-  Table,
-  TableBody,
-  TableCaption,
-  TableCell,
-  TableHead,
-  TableHeader,
-  TableRow,
-} from '@/components/ui/table';
-import { redirect } from 'next/navigation';
 
 export default function MainTable({ query }: { query: string }) {
   const dictionary = getDictionary();
-  const entries = [];
-
-  for (const key in dictionary) {
-    if (query !== '' && key.indexOf(query) > -1) {
-      entries.push(dictionary[key]);
-    }
-  }
+  const entries = getMatches(query, dictionary);
 
   const NoResult = () => (
     <h4 className="scroll-m-20 text-xl font-semibold tracking-tight">
