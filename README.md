@@ -1,3 +1,5 @@
+For my second project around web development and UI design, I decided to create a dictionary for slang phrases and words in Turkish. I created an input field for searching and designed components around it.
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
